@@ -21,10 +21,11 @@ Llamada R por ser tipo registro, usa dos registros como fuentes y uno como desti
     6 bits	 5 bits	  5 bits   5 bits   5 bits    6 bits
 
 ## Instrucciones tipo I.
+Las instrucciones tipo I son inmediatas ya que se utilizan para las instrucciones que utilizan un valor inmediato. Ya sea como ejemplo la suma inmediata addi o la lectura de un dato en memoria. Estas instrucciones es
 
 
 ## Instrucciones tipo J.
-
+Siendo instrucciones de salto, se utilizan par marcar un cambio en el número de bits o registros.
 
 
 Desarrollo de implementación de los elementos
