@@ -1,7 +1,9 @@
 module TIPO_I(
-	input clk_datapath,
+	input clk_datapath
+	/*
 	output [31:0]check,
 	output[31:0]c1
+	*/
 );
 
 //Cables para interconexion completa:
@@ -292,8 +294,8 @@ mux instancia_PCSrc_mux(
 	.signal(outputand),
 	.outputmux(outputmux_PCSrc)
 );
-
+/*
 assign check = dato1_cable;
 assign c1 = dato2_cable;
-
+*/
 endmodule
