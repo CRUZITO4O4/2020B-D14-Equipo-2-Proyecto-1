@@ -24,16 +24,16 @@ module buffer3(
 );
 always @(posedge clk)
 	begin
-		regwrite_out <= regwrite_in;
-		memtoreg_out <= memtoreg_in;
-		memwrite_out <= memwrite_in;
-		memread_out <= memread_in;
-		branch_out <= branch_in;
-		branch_result_out <= branch_result_in;
-		zflag_out <= zflag_in;
-		alures_out <= alures_in;
-		data2_out <= data2_in;
-		instruccion_out <= instruccion_in;
+		regwrite_out = regwrite_in;
+		memtoreg_out = memtoreg_in;
+		memwrite_out = memwrite_in;
+		memread_out = memread_in;
+		branch_out = branch_in;
+		branch_result_out = branch_result_in;
+		zflag_out = zflag_in;
+		alures_out = alures_in;
+		data2_out = data2_in;
+		instruccion_out = instruccion_in;
 	end 
 	
 endmodule

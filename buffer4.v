@@ -15,11 +15,11 @@ module buffer4(
 
 always @(posedge clk)
 	begin
-		regwrite_out <= regwrite_in;
-		memtoreg_out <= memtoreg_in;
-		memres_out <= memres_in;
-		alures_out <= alures_in;
-		writeregister_out <= writeregister_in;
+		regwrite_out = regwrite_in;
+		memtoreg_out = memtoreg_in;
+		memres_out = memres_in;
+		alures_out = alures_in;
+		writeregister_out = writeregister_in;
 	end 
 	
 endmodule

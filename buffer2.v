@@ -33,20 +33,20 @@ module buffer2(
 
 always @(posedge clk)
 	begin
-	regwrite_out <= regwrite_in;
-	memtoreg_out <= memtoreg_in;
-	memwrite_out <= memwrite_in;
-	memread_out <= memread_in;
-	branch_out <= branch_in;
-	aluop_out <= aluop_in;
-	alusrc_out <= alusrc_in;
-	regdst_out <= regdst_in;
-	pcsumain_out <= pcsumain_in;
-	data1_out <= data1_in;
-	data2_out <= data2_in;
-	signextender_out <= signextender_in;
-	instruccion_out <= instruccion_in;
-	instruccion2_out <= instruccion2_out;
+	regwrite_out = regwrite_in;
+	memtoreg_out = memtoreg_in;
+	memwrite_out = memwrite_in;
+	memread_out = memread_in;
+	branch_out = branch_in;
+	aluop_out = aluop_in;
+	alusrc_out = alusrc_in;
+	regdst_out = regdst_in;
+	pcsumain_out = pcsumain_in;
+	data1_out = data1_in;
+	data2_out = data2_in;
+	signextender_out = signextender_in;
+	instruccion_out = instruccion_in;
+	instruccion2_out = instruccion2_out;
 	end 
 
 endmodule 
