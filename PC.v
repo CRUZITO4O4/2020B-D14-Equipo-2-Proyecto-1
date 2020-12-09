@@ -4,6 +4,10 @@ module PC(
 	output reg[31:0]outputpc
 );
 
+initial
+begin
+	outputpc <= 32'd0;
+end
 
 always@(posedge clk)
 begin

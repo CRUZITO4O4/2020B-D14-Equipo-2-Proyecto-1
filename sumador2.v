@@ -1,8 +1,13 @@
 module sumador2(
 	input[31:0]inputsumador1,inputsumador2,
-	output[31:0]outputsumador
+	output reg [31:0]outputsumador
 );
 
-assign outputsumador = inputsumador1 + inputsumador2;
+always@*
+begin
+	outputsumador = inputsumador1 + inputsumador2;
+end
+
+//assign outputsumador = inputsumador1 + inputsumador2;
 
 endmodule

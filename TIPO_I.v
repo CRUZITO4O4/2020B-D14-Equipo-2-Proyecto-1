@@ -1,11 +1,10 @@
 module TIPO_I(
-	input clk
+	input clk_datapath,
+	output [31:0]check,
+	output[31:0]c1
 );
 
 //Cables para interconexion completa:
-
-//Cable del CLK
-wire clk_principal_cable;
 
 //Cables de PC
 wire [31:0]outpc_cable;
@@ -104,7 +103,7 @@ wire[31:0]dato_a_escribir_cable;
 wire[31:0]outputmux_PCSrc;
  
 PC instancia_PC(
-	.clk(c1k_principal_cable),
+	.clk(clk_datapath),
 	.inputpc(outputmux_PCSrc),
 	.outputpc(outpc_cable)
 );
@@ -116,12 +115,11 @@ meminstruc instancia_memoria_instrucciones(
 
 sumador instancia_sumador1(
 	.inputsumador1(outpc_cable),
-	.inputsumador2(),
 	.outputsumador(outputsumador1_cable)
 );
 
 buffer1 instancia_buffer1(
-	.clk(clk_principal_cable),
+	.clk(clk_datapath),
 	.intruccion_in(outputmeminstruc_cable),
 	.pcsumain(outputsumador1_cable),
 	.intruccion_out(instruccion_out_cable),
@@ -156,7 +154,7 @@ extendersigno instancia_sign_extender(
 );
 
 buffer2 instancia_buffer2(
-	.clk(clk_principal_cable),
+	.clk(clk_datapath),
 	.regwrite_in(regwrite_cable),
 	.memtoreg_in(memtoreg_cable),
 	.memwrite_in(memwrite_cable),
@@ -228,7 +226,7 @@ ALU instancia_ALU(
 );
 
 buffer3 instancia_buffer3(
-	.clk(c1k_principal_cable),
+	.clk(clk_datapath),
 	.regwrite_in(regwrite_cable_buffer2),
 	.memtoreg_in(memtoreg_cable_buffer2),
 	.memwrite_in(memwrite_cable_buffer2),
@@ -267,7 +265,7 @@ memdatos intancia_memoria_datos(
 );
 
 buffer4 instancia_buffer4(
-	.clk(c1k_principal_cable),
+	.clk(clk_datapath),
 	.regwrite_in(regwrite_cable_buffer3),
 	.memtoreg_in(memtoreg_cable_buffer3),
 	.memres_in(memres_cable),
@@ -294,4 +292,8 @@ mux instancia_PCSrc_mux(
 	.signal(outputand),
 	.outputmux(outputmux_PCSrc)
 );
+
+assign check = dato1_cable;
+assign c1 = dato2_cable;
+
 endmodule
